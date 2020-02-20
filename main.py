@@ -22,13 +22,14 @@ num_books, num_libs, num_days, book_scores, libraries, booksets_for_libs = read(
 
 output_list_of_libs = []
 
-libs = []
-for i, lib in enumerate(libraries):
-    libs.append(Lib(i, lib[0], lib[1], lib[2], None))
-
 books = []
 for i, book in enumerate(book_scores):
     books.append(Book(i, book_scores))
+
+
+libs = []
+for i, lib in enumerate(libraries):
+    libs.append(Lib(i, lib[0], lib[1], lib[2], books))
 
 current_day = 0
 while num_days > current_day:

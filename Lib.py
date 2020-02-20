@@ -12,11 +12,40 @@ class Lib:
         self.signUp = signUp
         self.scan = scan
         self.is_used = 0
+        self.UsedBooks = []
+        self.all_books = all_books
         #self.books = [b for b in books if b.bid in bookSet]
 
     def remove_from_book_set(self, book_id_to_remove):
         if book_id_to_remove in self.bookSet:
             self.bookSet.remove(book_id_to_remove)
+    
+    def get_highest_book(self):
+        #Todo returns book with highest score
+        current_score = 0
+        current_hs_i = 0
+        for b in bookSet:
+            if(b not in self.bookSet)
+                if(all_books[b].score > current_score):
+                    current_score = all_books[b].score
+                    current_hs_i = b
+        return all_books[current_hs_i]
 
-    def get_score_from_lib(self):
-        return 5
+
+
+    def get_score_from_lib(self, days_left):
+        days_left =- self.signUp
+        score = 0
+        self.UsedBooks = []
+        for days_left in range(days)
+            for in i range(scan)
+                temp_book = get_highest_book()
+                usedBook.append(temp_book.bId)
+                score += temp_book.score
+        return score
+
+                
+
+
+
+
