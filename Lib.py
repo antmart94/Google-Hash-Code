@@ -23,23 +23,26 @@ class Lib:
         #Todo returns book with highest score
         current_score = 0
         current_hs_i = 0
-        for b in bookSet:
-            if(b not in self.bookSet):
-                if(all_books[b].score > current_score):
+        valid = 0
+        for b in self.bookSet:
+            if b not in self.UsedBooks:
+                if self.all_books[b].score > current_score:
+                    valid =1
                     current_score = self.all_books[b].score
                     current_hs_i = b
-        return all_books[current_hs_i]
-
+        return valid, self.all_books[current_hs_i]
 
 
     def get_score_from_lib(self, days_left):
-        days_left =- self.signUp
+        days_left -= self.signUp
         score = 0
         self.UsedBooks = []
         for day in range(days_left):
-            for i in range(scan):
-                temp_book = self.get_highest_book()
-                usedBook.append(temp_book.bId)
+            for i in range(self.scan):
+                valid, temp_book = self.get_highest_book()
+                if valid == 0:
+                    break
+                self.UsedBooks.append(temp_book.bId)
                 score += temp_book.score
         return score
 
