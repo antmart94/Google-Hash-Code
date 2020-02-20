@@ -6,6 +6,6 @@ import re
 
 class Book:
 
-    def __init__(self, score):
-        self.id = id
+    def __init__(self,bId score):
+        self.bId = bId
         self.score = score
