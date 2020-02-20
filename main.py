@@ -20,7 +20,7 @@ e_path = 'inputs/e_so_many_books.txt'
 f_path = 'inputs/f_libraries_of_the_world.txt'
 num_books, num_libs, num_days, book_scores, libraries, booksets_for_libs = read(a_path)
 
-output_list_of_libs[]
+output_list_of_libs = []
 
 libs = []
 for i, lib in enumerate(libraries):
@@ -30,7 +30,7 @@ books = []
 for i, book in enumerate(book_scores):
     books.append(Book(i, book_scores)
     
-current_days = 0
+current_day = 0
 while num_days > current_day:
     highest_score_yet = 0;
     highest_i = 0
@@ -46,5 +46,14 @@ while num_days > current_day:
     #TODO here purge books from other libs
     libs[highest_i].is_used=1
     current_day += libs[highest_i].signUp
+
+
+
+print("Time to output results\nNumber of libs\nfirst lib, number of books\nfirst libs books\n....\nlast lib, number of books\nlast libs books\n")
+print(len(output_list_of_libs))
+for i, each_lib in enumerate(output_list_of_libs):
+print(i)#TODO add number of books typ each_lib.booklist
+print()#TODO booklist of current lib
+
 
 
