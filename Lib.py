@@ -10,3 +10,4 @@ class Lib:
             self.bookSet = bookSet
             self.signUp = signUp
             self.scan = scan
+
