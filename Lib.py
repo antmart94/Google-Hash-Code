@@ -11,3 +11,7 @@ class Lib:
             self.signUp = signUp
             self.scan = scan
 
+    def remove_from_book_set(book_id_to_remove):
+        if book_id_to_remove in bookSet:
+            bookSet.remove(book_id_to_remove)
+
