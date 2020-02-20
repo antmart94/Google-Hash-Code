@@ -10,6 +10,7 @@ class Lib:
             self.bookSet = bookSet
             self.signUp = signUp
             self.scan = scan
+            self.is_used = 0
 
     def remove_from_book_set(book_id_to_remove):
         if book_id_to_remove in bookSet:

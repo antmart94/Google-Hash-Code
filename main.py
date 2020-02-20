@@ -35,14 +35,14 @@ while num_days > current_day:
     highest_score_yet = 0;
     highest_i = 0
     for i, lib in enumerte(libs):
-        temp_scores = get_score_from_lib(lib, num_days-current_day)
-        if temp_score >= highest_score_yet:
-            highest_i = i
-            highest_score_yet= temp_score
+        if lib.is_used == 0:
+            temp_scores = get_score_from_lib(lib, num_days-current_day)
+            if temp_score >= highest_score_yet:
+                highest_i = i
+                highest_score_yet= temp_score
 
-    output_list_of_libs.append(i)
-    #purge books from other libs 
-    #set lib to used
+    output_list_of_libs.append(highest_i)
+    purge()
+    libs[highest_i].is_used=1
     current_day += 1 #todo lib.days_toscan
-
 
