@@ -42,7 +42,9 @@ while num_days > current_day:
                 highest_score_yet= temp_score
 
     output_list_of_libs.append(highest_i)
-    purge()
+
+    #TODO here purge books from other libs
     libs[highest_i].is_used=1
-    current_day += 1 #todo lib.days_toscan
+    current_day += libs[highest_i].signUp
+
 
