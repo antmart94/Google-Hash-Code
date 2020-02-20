@@ -5,9 +5,9 @@ import re
 
 
 class Book:
-    int id
-    int score
+    bId
+    score
 
-    def _init_(self, id, score):
+    def _init_(self, int bId,int score):
         self.id = id
         self.score = score
