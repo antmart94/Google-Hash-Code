@@ -7,8 +7,8 @@ Created on Thu Feb 20 18:40:52 2020
 """
 import pandas as pd
 import re
-import Lib
-import Book
+from Lib import Lib
+from Book import Book
 import numpy
 from utils import read
 
@@ -24,19 +24,19 @@ output_list_of_libs = []
 
 libs = []
 for i, lib in enumerate(libraries):
-    libs.append(Lib(i, lib[0], lib[1], lib[2]))
-    
+    libs.append(Lib(i, lib[0], lib[1], lib[2], None))
+
 books = []
 for i, book in enumerate(book_scores):
-    books.append(Book(i, book_scores)
-    
+    books.append(Book(i, book_scores))
+
 current_day = 0
 while num_days > current_day:
     highest_score_yet = 0;
     highest_i = 0
-    for i, lib in enumerte(libs):
+    for i, lib in enumerate(libs):
         if lib.is_used == 0:
-            temp_scores = get_score_from_lib(lib, num_days-current_day)
+            temp_score = lib.get_score_from_lib()#lib, num_days-current_day)
             if temp_score >= highest_score_yet:
                 highest_i = i
                 highest_score_yet= temp_score
@@ -46,14 +46,25 @@ while num_days > current_day:
     #TODO here purge books from other libs
     libs[highest_i].is_used=1
     current_day += libs[highest_i].signUp
+    
+num_sent_books = 0 # TODO - implement
+output = f"{len(output_list_of_libs)}\n" # Header
+for libId in output_list_of_libs:
+    output += f"{libId} {num_sent_books}\n"
+    for b in sent_books:
+        output += f"{b} "
+    output += "\n"
 
 
 
-print("Time to output results\nNumber of libs\nfirst lib, number of books\nfirst libs books\n....\nlast lib, number of books\nlast libs books\n")
-print(len(output_list_of_libs))
-for i, each_lib in enumerate(output_list_of_libs):
-print(i)#TODO add number of books typ each_lib.booklist
-print()#TODO booklist of current lib
+#print(f"Time to output results\nNumber of libs: {output_list_of_libs}")
+#print(f"First lib: {}")
+#print(f"First lib: {}")
+#'\nfirst lib, number of books\nfirst libs books\n....\nlast lib, number of books\nlast libs books\n")
+#print(len(output_list_of_libs))
+#for i, each_lib in enumerate(output_list_of_libs):
+#    print(i)#TODO add number of books typ each_lib.booklist
+#    print(each_lib)#TODO booklist of current lib
 
 
 
