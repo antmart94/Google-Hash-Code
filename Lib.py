@@ -1,6 +1,5 @@
 
 
-import pandas as pd
 import re
 import numpy as np
 
@@ -25,9 +24,9 @@ class Lib:
         current_score = 0
         current_hs_i = 0
         for b in bookSet:
-            if(b not in self.bookSet)
+            if(b not in self.bookSet):
                 if(all_books[b].score > current_score):
-                    current_score = all_books[b].score
+                    current_score = self.all_books[b].score
                     current_hs_i = b
         return all_books[current_hs_i]
 
@@ -37,9 +36,9 @@ class Lib:
         days_left =- self.signUp
         score = 0
         self.UsedBooks = []
-        for days_left in range(days)
-            for in i range(scan)
-                temp_book = get_highest_book()
+        for day in range(days_left):
+            for i in range(scan):
+                temp_book = self.get_highest_book()
                 usedBook.append(temp_book.bId)
                 score += temp_book.score
         return score
